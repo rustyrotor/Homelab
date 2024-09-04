@@ -2,8 +2,6 @@ services:
   gluetun:
     image: qmcgaw/gluetun
     container_name: gluetun
-    # line above must be uncommented to allow external containers to connect.
-    # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
     #USE BELOW COMMANDS TO UPDATE
     #docker compose pull
     #docker compose up -d --remove-orphans
