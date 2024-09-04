@@ -1,0 +1,16 @@
+ervices:
+  firefox:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: firefox-real
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/EST
+      - FIREFOX_CLI=https://www.linuxserver.io/ #optional
+    network_mode: container:gluetun
+    volumes:
+      - /home/rusty/firefox:/config
+    shm_size: 1gb
+    restart: unless-stopped
