@@ -1,0 +1,17 @@
+---
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/EST
+      - VERSION=docker
+      - PLEX_CLAIM=claim-
+    volumes:
+      - /home/rusty/plex/library:/config
+      - /home/rusty//tvseries:/TV
+      - /home/rusty/Movies:/Movies
+    restart: unless-stopped
